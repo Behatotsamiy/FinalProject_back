@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { StationsService } from './stations.service';
 import { CreateStationDto } from './dto/create-station.dto';
 import { UpdateStationDto } from './dto/update-station.dto';
@@ -13,8 +13,8 @@ export class StationsController {
   }
 
   @Get()
-  findAll() {
-    return this.stationsService.findAll();
+  findAll(@Query() q  : any) {
+    return this.stationsService.findAll(q);
   }
 
   @Get(':id')

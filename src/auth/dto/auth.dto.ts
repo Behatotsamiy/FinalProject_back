@@ -4,7 +4,7 @@ import { IsNotEmpty, IsString, MaxLength, MinLength } from "class-validator";
 export class LoginDto {
     @IsString()
     @IsNotEmpty()
-    phonenumber: string;
+    phone: string;
 
     @IsString()
     @IsNotEmpty()

@@ -25,11 +25,10 @@ export class User {
     @Prop({
         type: mongoose.SchemaTypes.String,
         required: true,
-        unique: true, // Для уникальности номера
+        unique: true,
         validate: {
             validator: function(v: string) {
-                // Простая валидация для телефона
-                return /\+?[1-9]\d{1,14}$/.test(v); // Простая проверка для международных номеров
+                return /\+?[1-9]\d{1,14}$/.test(v); 
             },
             message: props => `${props.value} не является валидным номером телефона!`,
         }
